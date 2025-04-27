@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scientific Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="calculator">
+    <input type="text" id="display" class="display" disabled>
+
+    <div class="buttons">
+        <!-- Row 1 -->
+        <button class="button" onclick="appendNumber('7')">7</button>
+        <button class="button" onclick="appendNumber('8')">8</button>
+        <button class="button" onclick="appendNumber('9')">9</button>
+        <button class="button" onclick="appendOperator('/')">/</button>
+
+        <!-- Row 2 -->
+        <button class="button" onclick="appendNumber('4')">4</button>
+        <button class="button" onclick="appendNumber('5')">5</button>
+        <button class="button" onclick="appendNumber('6')">6</button>
+        <button class="button" onclick="appendOperator('*')">*</button>
+
+        <!-- Row 3 -->
+        <button class="button" onclick="appendNumber('1')">1</button>
+        <button class="button" onclick="appendNumber('2')">2</button>
+        <button class="button" onclick="appendNumber('3')">3</button>
+        <button class="button" onclick="appendOperator('-')">-</button>
+
+        <!-- Row 4 -->
+        <button class="button" onclick="appendNumber('0')">0</button>
+        <button class="button" onclick="appendOperator('.')">.</button>
+        <button class="button" onclick="clearDisplay()">C</button>
+        <button class="button" onclick="appendOperator('+')">+</button>
+
+        <!-- Row 5 (Scientific functions) -->
+        <button class="button" onclick="appendScientificFunction('sin')">sin</button>
+        <button class="button" onclick="appendScientificFunction('cos')">cos</button>
+        <button class="button" onclick="appendScientificFunction('tan')">tan</button>
+        <button class="button" onclick="appendScientificFunction('log')">log</button>
+
+        <!-- Row 6 -->
+        <button class="button" onclick="calculate()">=</button>
+        <button class="button" onclick="backspace()">←</button>
+        <button class="button" onclick="appendParenthesis('(')">(</button>
+        <button class="button" onclick="appendParenthesis(')')">)</button>
+    </div>
+
+    <div class="mode-buttons">
+        <button class="mode-toggle" onclick="toggleHistory()">History</button>
+    </div>
+
+    <!-- History Section -->
+    <div class="history" id="historySection">
+        <h3>History</h3>
+        <ul id="historyList"></ul>
+    </div>
+</div>
+
+<audio id="clickSound" src="click.mp3" preload="auto"></audio>
+
+<script src="script.js"></script>
+</body>
+</html>
